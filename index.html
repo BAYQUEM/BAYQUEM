@@ -2,45 +2,318 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Página de prueba BAYQUEM</title>
+  <title>BAYQUEM SAC - Soluciones Contables</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts: Raleway -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
   <style>
     body {
-      background: #e3e9f6;
-      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      font-family: 'Raleway', Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      color: #223;
     }
-    .container {
-      max-width: 600px;
-      margin: 80px auto;
+    header {
       background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 2px 16px #b6b6c8;
-      padding: 40px 30px;
-      text-align: center;
+      box-shadow: 0 2px 12px #e2e2ef;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    h1 {
+    .logo-container {
+      display: flex;
+      align-items: center;
+      margin-left: 40px;
+    }
+    .logo-img {
+      height: 50px;
+      margin-right: 10px;
+      border-radius: 10px;
+      background: #d5e6fa;
+      padding: 5px;
+    }
+    .brand {
+      font-size: 2em;
       color: #1a237e;
-      margin-bottom: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
-    p {
-      color: #26335d;
-      font-size: 1.2em;
+    nav {
+      margin-right: 40px;
     }
-    .ok {
+    nav a {
+      color: #1a237e;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 15px;
+      font-size: 1.05em;
+      transition: color 0.2s;
+    }
+    nav a:hover {
       color: #388e3c;
-      font-weight: bold;
-      font-size: 1.1em;
+    }
+    .main {
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 32px #c8d0ef29;
+      padding: 40px 30px 30px 30px;
+    }
+
+    section {
+      margin-bottom: 45px;
+    }
+    h2 {
+      color: #1a237e;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .about-text {
+      font-size: 1.2em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .services-list {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 25px;
       margin-top: 20px;
+    }
+    .service-card {
+      background: #e3e9f6;
+      border-radius: 10px;
+      box-shadow: 0 1px 6px #b6b6c833;
+      padding: 25px 18px 18px 18px;
+      max-width: 270px;
+      min-width: 200px;
+      text-align: center;
+      flex: 1;
+      transition: transform 0.15s;
+    }
+    .service-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 4px 24px #b6b6c855;
+    }
+    .service-title {
+      color: #237e4c;
+      font-size: 1.18em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .service-desc {
+      color: #223;
+      font-size: 1em;
+    }
+
+    /* Consulta Gratis */
+    .consulta-form-container {
+      background: #f0fbfa;
+      border-radius: 12px;
+      box-shadow: 0 1px 8px #b6b6c880;
+      padding: 30px 22px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .consulta-form-container h3 {
+      color: #1a237e;
+      margin-bottom: 15px;
+    }
+    form label {
+      display: block;
+      margin-bottom: 6px;
+      color: #223;
+      font-weight: 600;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 9px 10px;
+      border: 1px solid #b4c9e5;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-family: 'Raleway', Arial, sans-serif;
+      font-size: 1em;
+      background: #fff;
+      resize: vertical;
+    }
+    form button {
+      background: #1a237e;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 11px 28px;
+      font-size: 1.08em;
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+    form button:hover {
+      background: #388e3c;
+    }
+
+    /* Contacto */
+    .contact-container {
+      text-align: center;
+      margin-top: 38px;
+    }
+    .contact-socials {
+      margin: 15px 0;
+      font-size: 1.17em;
+    }
+    .contact-socials a {
+      margin: 0 10px;
+      color: #1a237e;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    .contact-socials a:hover {
+      color: #388e3c;
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      background: #25d366;
+      color: #fff;
+      border-radius: 8px;
+      padding: 7px 18px;
+      margin-top: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: background 0.15s;
+    }
+    .whatsapp-btn:hover {
+      background: #128c7e;
+    }
+
+    /* Responsive */
+    @media (max-width: 850px) {
+      .main {
+        padding: 30px 6px;
+      }
+      .services-list {
+        flex-direction: column;
+        align-items: center;
+      }
+      header, nav {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+      }
+      nav {
+        margin: 0 0 0 25px;
+        padding-bottom: 8px;
+      }
+    }
+    @media (max-width: 600px) {
+      .logo-img {
+        height: 38px;
+      }
+      .brand {
+        font-size: 1.3em;
+      }
+      header {
+        padding: 8px 0;
+      }
+      .main {
+        margin: 18px 3px 0 3px;
+        border-radius: 10px;
+        padding: 18px 3px 18px 3px;
+      }
+      .consulta-form-container {
+        padding: 16px 4px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>¡La página está funcionando!</h1>
-    <p>Si ves este mensaje y el fondo celeste, tu <b>index.html</b> está bien cargado en GitHub Pages.</p>
-    <p class="ok">Puedes reemplazar este contenido por el de tu sitio real cuando quieras.</p>
+  <header>
+    <div class="logo-container">
+      <!-- Reemplaza src con el logo real -->
+      <img src="logo.png" alt="Logo BayQuem" class="logo-img">
+      <span class="brand">BayQuem SAC</span>
+    </div>
+    <nav>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#consulta">Consulta Gratis</a>
+      <a href="#contacto">Contáctanos</a>
+    </nav>
+  </header>
+  <div class="main">
+    <section id="nosotros">
+      <h2>Nosotros</h2>
+      <p class="about-text">
+        En <b>BayQuem SAC</b> somos especialistas en brindar soluciones integrales en <b>contabilidad, tributación y auditoría</b> para empresas y emprendedores. Nuestro equipo está comprometido con la excelencia, la ética profesional y la confianza de nuestros clientes.
+      </p>
+    </section>
+
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <div class="services-list">
+        <div class="service-card">
+          <div class="service-title">Contabilidad</div>
+          <div class="service-desc">
+            Registro y análisis contable, elaboración de estados financieros, reportes mensuales y asesoría permanente para la toma de decisiones.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Tributación</div>
+          <div class="service-desc">
+            Planeamiento tributario, cumplimiento de obligaciones fiscales, declaraciones y representación ante SUNAT.
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Auditoría</div>
+          <div class="service-desc">
+            Auditoría financiera y operativa, revisiones independientes y recomendaciones para la mejora de procesos internos.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consulta">
+      <div class="consulta-form-container">
+        <h3>¡Solicita tu Consulta Gratis!</h3>
+        <form action="https://formsubmit.co/mmquesadaser@hotmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nueva consulta gratis desde BayQuem SAC">
+          <input type="hidden" name="_captcha" value="false">
+          <label for="nombre">Nombre y Apellido</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required>
+          <label for="mensaje">¿En qué podemos ayudarte?</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <button type="submit">Enviar Consulta</button>
+        </form>
+        <p style="margin-top:12px; font-size:0.98em; color:#388e3c;">
+          Recibirás una respuesta en tu correo pronto. ¡Es gratis y sin compromiso!
+        </p>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+      <div class="contact-container">
+        <div class="contact-socials">
+          <a href="https://instagram.com/bayquem_sac" target="_blank">Instagram: @bayquem_sac</a> |
+          <a href="https://facebook.com/BayQuemSAC" target="_blank">Facebook: BayQuem SAC</a>
+        </div>
+        <a class="whatsapp-btn" href="https://wa.me/51989571595" target="_blank">WhatsApp: +51 989 571 595</a>
+        <p style="margin-top:14px;font-size:1em;color:#223;">
+          También puedes escribirnos a: <a href="mailto:mmquesadaser@hotmail.com">mmquesadaser@hotmail.com</a>
+        </p>
+      </div>
+    </section>
   </div>
+  <footer style="background:#1a237e;color:#fff;text-align:center;padding:16px 0;margin-top:40px;letter-spacing:1px;font-size:1em;border-top-left-radius:18px;border-top-right-radius:18px;">
+    &copy; 2025 BayQuem SAC. Todos los derechos reservados.
+  </footer>
 </body>
 </html>
