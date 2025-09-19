@@ -2,11 +2,44 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>BAYQUEM SAC – Contabilidad, Auditoría y Tributación</title>
+  <title>BAYQUEM SAC – Servicios Contables, Auditoría y Tributación</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="BAYQUEM SAC: servicios contables, auditoría y tributación explicados de forma clara y didáctica. Cuentas claras, decisiones seguras." />
+  <meta name="description" content="BAYQUEM SAC ofrece servicios contables, auditoría y tributación para empresas y emprendedores. Cuentas precisas, decisiones seguras." />
+  <link rel="icon" href="isotipo.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BAYQUEM SAC – Soluciones Contables" />
+  <meta property="og:description" content="Contabilidad | Auditoría | Tributación. Agenda tu cita y recibe asesoría clara y profesional." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="isotipo.png" />
+  <meta property="og:locale" content="es_PE" />
+
+  <!-- JSON-LD: Organización + Sitelinks (Google puede usarlo) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"BAYQUEM SAC",
+    "url":"https://TU-DOMINIO-AQUI", 
+    "logo":"https://TU-DOMINIO-AQUI/Logo%20blanco.png",
+    "sameAs":[
+      "https://instagram.com/bayquem_sac",
+      "https://facebook.com/BayQuemSAC",
+      "https://wa.me/51989571595"
+    ],
+    "contactPoint":[{
+      "@type":"ContactPoint",
+      "email":"mmquesadaser@hotmail.com",
+      "contactType":"customer support",
+      "areaServed":"PE",
+      "availableLanguage":["es"]
+    }]
+  }
+  </script>
+
+  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="favicon.ico" />
+
   <style>
     :root{
       --brand:#1a237e; --accent:#388e3c; --ink:#1f2430; --muted:#5a6376;
@@ -19,163 +52,250 @@
     img{max-width:100%; display:block}
 
     /* Header */
-    header{position:sticky; top:0; z-index:50; background:#fff; box-shadow:0 2px 12px rgba(0,0,0,.05)}
+    header{position:sticky; top:0; z-index:50; background:#0b143f; color:#fff; box-shadow:0 2px 10px rgba(0,0,0,.15)}
     .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
     .bar{display:flex; align-items:center; justify-content:space-between; padding:10px 0}
     .logo{display:flex; align-items:center; gap:12px}
-    .logo img{height:44px; border-radius:10px; background:#d5e6fa; padding:5px}
-    .brand{font-family:'Montserrat',sans-serif; font-weight:700; color:var(--brand); font-size:1.4rem}
-    nav a{font-weight:600; margin:0 10px; padding:10px 4px}
-    .menu-btn{display:none; border:1px solid #e0e6f5; background:#fff; padding:8px 12px; border-radius:8px}
+    .logo img{height:44px}
+    .brand{font-family:'Montserrat',sans-serif; font-weight:700; color:#fff; font-size:1.4rem}
+    nav a{color:#fff; font-weight:600; margin:0 10px; padding:10px 4px}
+    nav a:hover{color:#b4d5ff}
+    .menu-btn{display:none; border:1px solid #31407a; background:#0b143f; color:#fff; padding:8px 12px; border-radius:8px}
     @media (max-width:860px){
       nav{display:none} .menu-btn{display:inline-block}
       .nav-open nav{display:flex; flex-direction:column; gap:8px; padding:10px 0}
     }
 
     /* Hero */
-    .hero{
-      position:relative; background:linear-gradient(135deg,#eef2ff 0%, #f5fff8 100%);
-      overflow:hidden
-    }
-    .hero .inner{max-width:var(--maxw); margin:0 auto; padding:80px 20px 50px; display:grid; grid-template-columns:1.2fr 1fr; gap:30px; align-items:center}
-    .hero h1{font-family:'Montserrat',sans-serif; font-size:2.2rem; line-height:1.15; color:var(--brand); margin:0 0 10px}
-    .hero p.lead{font-size:1.15rem; color:#2c3344; margin:0 0 20px}
-    .badges{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 24px}
-    .badge{background:#fff; border:1px solid #e3e8fb; padding:8px 12px; border-radius:999px; font-weight:600; font-size:.95rem}
-    .cta-row{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .hero{background:linear-gradient(135deg,#101c56 0%, #17306b 100%); color:#fff}
+    .hero .inner{max-width:var(--maxw); margin:0 auto; padding:70px 20px 40px; display:grid; grid-template-columns:1.15fr 1fr; gap:30px; align-items:center}
+    .hero h1{font-family:'Montserrat',sans-serif; font-size:2.1rem; line-height:1.15; margin:0 0 10px}
+    .hero p.lead{font-size:1.1rem; opacity:.9}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
     .btn{display:inline-block; padding:12px 18px; border-radius:10px; font-weight:700; border:none; cursor:pointer}
-    .btn-primary{background:var(--brand); color:#fff} .btn-primary:hover{background:#16206a}
-    .btn-ghost{background:#fff; border:1px solid #dbe3ff}
-    .hero-ill{position:relative; border-radius:18px; background:#fff; box-shadow:var(--shadow); padding:18px}
-    .hero-ill img{border-radius:12px}
-    @media (max-width:860px){.hero .inner{grid-template-columns:1fr; padding:60px 20px 30px}}
+    .btn-primary{background:#25d366; color:#0b143f} .btn-primary:hover{filter:brightness(1.05)}
+    .btn-ghost{background:#0b143f; color:#fff; border:1px solid #31407a}
+    .hero-logos{display:flex; gap:16px; align-items:center}
+    .hero-logos img{height:48px; background:#ffffff18; border-radius:10px; padding:6px}
+    @media (max-width:860px){.hero .inner{grid-template-columns:1fr; padding:56px 20px}}
 
-    /* Spotlight sections */
-    .spot{max-width:var(--maxw); margin:40px auto; padding:0 20px; display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:center}
-    .spot .box{background:#fff; border-radius:18px; padding:24px; box-shadow:var(--shadow)}
-    .spot h2{font-family:'Montserrat',sans-serif; color:var(--brand); margin:0 0 8px}
-    .spot p{margin:.2rem 0}
-    .check{display:flex; gap:10px; align-items:flex-start; margin:10px 0}
-    .check svg{min-width:22px}
-    .spot.reverse{grid-auto-flow:dense} .spot.reverse .box:first-child{order:2}
-    @media (max-width:980px){.spot{grid-template-columns:1fr}}
+    /* Secciones base */
+    main{max-width:var(--maxw); margin:0 auto; padding:36px 20px}
+    section{margin-bottom:48px}
+    h2{font-family:'Montserrat',sans-serif; color:var(--brand); margin:0 0 8px}
 
-    /* Servicios didácticos */
-    .services{max-width:var(--maxw); margin:40px auto; padding:0 20px}
-    .services h2{font-family:'Montserrat',sans-serif; color:var(--brand); margin:0 0 10px}
-    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    /* Sobre nosotros */
+    .about{background:#fff; border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
+    .about p{margin:.3rem 0}
+
+    /* Servicios */
+    .services .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
     .card{background:#fff; border-radius:14px; padding:22px; box-shadow:var(--shadow)}
-    .card h3{margin:8px 0 6px; color:#237e4c; font-size:1.1rem}
+    .card h3{margin:6px 0 6px; color:#237e4c; font-size:1.1rem}
     .mini{font-size:.95rem; color:var(--muted)}
-    .ico{width:40px; height:40px}
-    @media (max-width:900px){.grid{grid-template-columns:1fr 1fr}} @media (max-width:620px){.grid{grid-template-columns:1fr}}
+    @media (max-width:900px){.services .grid{grid-template-columns:1fr 1fr}} 
+    @media (max-width:620px){.services .grid{grid-template-columns:1fr}}
 
-    /* Pasos del proceso */
-    .steps{max-width:var(--maxw); margin:50px auto; padding:0 20px}
-    .steps h2{font-family:'Montserrat',sans-serif; color:var(--brand)}
-    .timeline{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
-    .step{background:#1a237e; color:#fff; border-radius:14px; padding:18px}
-    .step span{display:inline-block; background:#fff; color:#1a237e; font-weight:800; padding:4px 10px; border-radius:999px; margin-bottom:8px}
-    @media (max-width:900px){.timeline{grid-template-columns:1fr 1fr}} @media (max-width:620px){.timeline{grid-template-columns:1fr}}
-
-    /* Casos rápidos */
-    .cases{max-width:var(--maxw); margin:40px auto; padding:0 20px}
-    .cases h2{font-family:'Montserrat',sans-serif; color:var(--brand)}
-    .case-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-    .case{background:#fff; border-radius:14px; box-shadow:var(--shadow); padding:18px}
-    .tag{display:inline-block; background:#eef6ff; color:#114a9f; font-weight:700; padding:4px 10px; border-radius:999px; margin:0 0 8px}
-    .before{border-left:4px solid #c0392b; padding-left:10px} .after{border-left:4px solid #27ae60; padding-left:10px}
-    @media (max-width:900px){.case-grid{grid-template-columns:1fr}}
-
-    /* FAQ */
-    .faq{max-width:var(--maxw); margin:50px auto; padding:0 20px}
-    .faq h2{font-family:'Montserrat',sans-serif; color:var(--brand)}
-    details{background:#fff; border-radius:12px; padding:14px 16px; box-shadow:var(--shadow); margin:10px 0}
-    summary{cursor:pointer; font-weight:700}
-    summary:focus{outline:3px solid #9ad0ff; border-radius:6px}
-
-    /* Consulta y CTA */
-    .cta{max-width:700px; margin:40px auto; background:linear-gradient(135deg,#f0fbfa,#eef2ff); border-radius:16px; padding:24px; box-shadow:var(--shadow)}
-    .cta form{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-    .cta label{font-weight:700}
-    .cta input,.cta textarea{width:100%; padding:10px; border:1px solid #b4c9e5; border-radius:8px; font:inherit; background:#fff}
-    .cta textarea{grid-column:1 / -1; min-height:110px}
-    .cta .actions{grid-column:1 / -1; display:flex; gap:10px; align-items:center}
+    /* Separar cita (agenda) */
+    .booking{background:linear-gradient(135deg,#f0fbfa,#eef2ff); border-radius:16px; padding:24px; box-shadow:var(--shadow)}
+    .booking .cols{display:grid; grid-template-columns:1.2fr 1fr; gap:18px}
+    .booking label{font-weight:700}
+    .booking input,.booking textarea, .booking select{
+      width:100%; padding:10px; border:1px solid #b4c9e5; border-radius:8px; font:inherit; background:#fff
+    }
+    .booking .actions{display:flex; gap:10px; align-items:center; margin-top:8px}
+    .btn-blue{background:var(--brand); color:#fff}
     .note{color:var(--muted); font-size:.95rem}
-    @media (max-width:700px){.cta form{grid-template-columns:1fr}}
+    .widget{background:#fff; border:1px solid #e6ebfb; border-radius:12px; padding:8px}
+    .widget iframe{width:100%; height:560px; border:0; border-radius:10px}
+    @media (max-width:900px){.booking .cols{grid-template-columns:1fr}}
 
-    footer{background:var(--brand); color:#fff; text-align:center; padding:16px 0; margin-top:40px; border-top-left-radius:18px; border-top-right-radius:18px}
+    /* Contacto */
+    .contact{display:grid; grid-template-columns:1.1fr .9fr; gap:18px}
+    .contact .box{background:#fff; border-radius:14px; padding:22px; box-shadow:var(--shadow)}
+    .contact label{font-weight:700}
+    .contact input,.contact textarea{
+      width:100%; padding:10px; border:1px solid #b4c9e5; border-radius:8px; font:inherit; background:#fff
+    }
+    .socials{display:flex; flex-direction:column; gap:10px; font-weight:700}
+    .socials a{display:inline-flex; align-items:center; gap:10px}
+    .wa{display:inline-flex; align-items:center; gap:10px; background:#25d366; color:#0b143f; border-radius:8px; padding:8px 12px; font-weight:800}
+    .wa:hover{filter:brightness(1.05)}
+    @media (max-width:860px){.contact{grid-template-columns:1fr}}
+
+    footer{background:#0b143f; color:#fff; text-align:center; padding:16px 0; margin-top:40px; border-top-left-radius:18px; border-top-right-radius:18px}
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="wrap bar" id="top">
       <a class="logo" href="#top" aria-label="Inicio BAYQUEM">
-        <img src="logo.png" alt="Logotipo BAYQUEM" />
+        <img src="Logo blanco.png" alt="Logotipo BAYQUEM" />
         <span class="brand">BAYQUEM SAC</span>
       </a>
       <button class="menu-btn" aria-label="Abrir menú" onclick="document.body.classList.toggle('nav-open')">☰ Menú</button>
       <nav aria-label="Navegación principal">
+        <a href="#nosotros">Sobre nosotros</a>
         <a href="#servicios">Servicios</a>
-        <a href="#como-trabajamos">Proceso</a>
-        <a href="#casos">Casos</a>
-        <a href="#faq">FAQ</a>
-        <a href="#consulta">Consulta</a>
+        <a href="#cita">Separar cita</a>
+        <a href="#contacto">Contáctanos</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" role="region" aria-label="Presentación">
+  <!-- Hero simple -->
+  <section class="hero">
     <div class="inner">
       <div>
-        <h1>Cuentas claras, decisiones <em>seguras</em>.</h1>
-        <p class="lead">Explicamos cada paso con lenguaje simple. <br/>Contabilidad, Auditoría y Tributación para que gestiones tu negocio sin complicaciones.</p>
-        <div class="badges">
-          <span class="badge">Reporte mensual claro</span>
-          <span class="badge">Acompañamiento 1:1</span>
-          <span class="badge">Representación ante SUNAT</span>
-        </div>
+        <h1>Cuentas precisas, decisiones seguras.</h1>
+        <p class="lead">Servicios Contables · Auditoría · Tributación — con lenguaje claro y procesos simples.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="#consulta">Solicitar consulta gratis</a>
+          <a class="btn btn-primary" href="#cita">Separar cita</a>
           <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
         </div>
       </div>
-      <div class="hero-ill">
-        <!-- Puedes reemplazar por una imagen de equipo/ilustración -->
-        <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=1200&auto=format&fit=crop" alt="Trabajo contable en equipo" />
+      <div class="hero-logos" aria-hidden="true">
+        <img src="Logo blanco.png" alt="" />
+        <img src="isotipo.png" alt="" />
       </div>
     </div>
   </section>
 
-  <!-- SPOTLIGHT: Qué hacemos / Para quién -->
-  <section class="spot">
-    <div class="box">
-      <h2>¿Qué hacemos?</h2>
-      <p>Transformamos información financiera compleja en <strong>resúmenes accionables</strong>, con indicadores y recomendaciones concretas.</p>
-      <div class="check">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#388e3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div>Estados financieros claros y a tiempo.</div>
+  <main>
+    <!-- Sobre nosotros -->
+    <section id="nosotros" class="about" aria-labelledby="t-nosotros">
+      <h2 id="t-nosotros">Sobre nosotros</h2>
+      <p>En <strong>BAYQUEM SAC</strong> acompañamos a empresas y emprendedores con soluciones integrales en <strong>contabilidad, auditoría y tributación</strong>. Trabajamos con ética, precisión y orientación a resultados para que tomes decisiones con confianza.</p>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="services" aria-labelledby="t-servicios">
+      <h2 id="t-servicios">Servicios</h2>
+      <p class="mini">Entregables claros y a tiempo. Representación ante SUNAT cuando la necesites.</p>
+      <div class="grid">
+        <article class="card" aria-label="Contabilidad">
+          <h3>Contabilidad</h3>
+          <p>Registros, reportes mensuales, estados financieros y KPIs con interpretación para la gerencia.</p>
+        </article>
+        <article class="card" aria-label="Tributación">
+          <h3>Tributación</h3>
+          <p>Planeamiento, cumplimiento de obligaciones, declaraciones, fraccionamientos y defensa.</p>
+        </article>
+        <article class="card" aria-label="Auditoría">
+          <h3>Auditoría</h3>
+          <p>Auditoría financiera/operativa, mapa de riesgos y plan de mejoras de control interno.</p>
+        </article>
       </div>
-      <div class="check">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#388e3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div>Planeamiento tributario con enfoque preventivo.</div>
+    </section>
+
+    <!-- Separar cita (Agenda) -->
+    <section id="cita" class="booking" aria-labelledby="t-cita">
+      <h2 id="t-cita">Separar cita</h2>
+      <div class="cols">
+        <!-- Opción A: Formulario nativo que te llega por correo -->
+        <div>
+          <form action="https://formsubmit.co/mmquesadaser@hotmail.com" method="POST">
+            <!-- FormSubmit options -->
+            <input type="hidden" name="_subject" value="Nueva solicitud de CITA – BAYQUEM" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_autoresponse" value="¡Gracias por separar tu cita con BAYQUEM! Te confirmaremos por correo." />
+            <!-- Cambia por tu dominio final cuando lo tengas: -->
+            <input type="hidden" name="_next" value="https://TU-DOMINIO-AQUI/gracias.html" />
+            <!-- Honeypot -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <label for="cita-nombre">Nombre y Apellido</label>
+            <input id="cita-nombre" name="nombre" type="text" required autocomplete="name" />
+
+            <label for="cita-email">Correo electrónico</label>
+            <input id="cita-email" name="email" type="email" required autocomplete="email" />
+
+            <label for="cita-servicio">Servicio de interés</label>
+            <select id="cita-servicio" name="servicio">
+              <option>Contabilidad</option>
+              <option>Tributación</option>
+              <option>Auditoría</option>
+            </select>
+
+            <label for="cita-fecha">Fecha preferida</label>
+            <input id="cita-fecha" name="fecha" type="date" required />
+
+            <label for="cita-hora">Hora preferida</label>
+            <input id="cita-hora" name="hora" type="time" required />
+
+            <label for="cita-mensaje">Detalles (opcional)</label>
+            <textarea id="cita-mensaje" name="mensaje" rows="4" placeholder="Cuéntanos brevemente tu caso..."></textarea>
+
+            <div class="actions">
+              <button class="btn btn-blue" type="submit">Enviar solicitud</button>
+              <span class="note">Te confirmaremos por correo.</span>
+            </div>
+          </form>
+        </div>
+
+        <!-- Opción B (recomendada): widget de agenda tipo Calendly -->
+        <div class="widget">
+          <!-- Si creas una cuenta gratuita en Calendly, reemplaza el src con tu enlace -->
+          <!-- Ejemplo: https://calendly.com/tuusuario/consulta -->
+          <iframe title="Agenda BAYQUEM"
+                  src="about:blank"
+                  loading="lazy"></iframe>
+          <p class="mini" style="padding:8px 8px 0 8px">
+            Consejo: crea un enlace de calendario (Calendly/Cal.com) para que el cliente elija un horario disponible y ambos reciban confirmación automática en sus correos.
+          </p>
+        </div>
       </div>
-      <div class="check">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#388e3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div>Auditoría que detecta riesgos y propone mejoras.</div>
+    </section>
+
+    <!-- Contáctanos -->
+    <section id="contacto" aria-labelledby="t-contacto" class="contact">
+      <div class="box">
+        <h2 id="t-contacto">Contáctanos</h2>
+        <form action="https://formsubmit.co/mmquesadaser@hotmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Mensaje desde CONTACTO – BAYQUEM" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_autoresponse" value="¡Gracias por contactar a BAYQUEM! Te responderemos a la brevedad." />
+          <input type="hidden" name="_next" value="https://TU-DOMINIO-AQUI/gracias.html" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <label for="ctc-nombre">Nombre</label>
+          <input id="ctc-nombre" name="nombre" type="text" required />
+
+          <label for="ctc-email">Correo</label>
+          <input id="ctc-email" name="email" type="email" required />
+
+          <label for="ctc-mensaje">Mensaje</label>
+          <textarea id="ctc-mensaje" name="mensaje" rows="5" required></textarea>
+
+          <div class="actions" style="margin-top:10px">
+            <button class="btn btn-blue" type="submit">Enviar mensaje</button>
+          </div>
+        </form>
       </div>
-    </div>
-    <div class="box">
-      <h2>¿Para quién?</h2>
-      <p>Empresas y emprendedores que buscan <strong>orden, cumplimiento y visión</strong> para crecer con solidez.</p>
-      <div class="check">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#388e3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div>Pymes que desean profesionalizar su gestión.</div>
-      </div>
-      <div class="check">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#388e3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div>Startups que necesitan orden contable desde el día uno.</div>
-      </div>
-      <div class="check">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="#388e3c" stroke-width="2" stroke-linecap="round" stroke-line
+
+      <aside class="box" aria-label="Redes y WhatsApp">
+        <h2 style="margin-bottom:6px">Síguenos</h2>
+        <div class="socials">
+          <a href="https://instagram.com/bayquem_sac" target="_blank" rel="noopener">📸 Instagram: @bayquem_sac</a>
+          <a href="https://facebook.com/BayQuemSAC" target="_blank" rel="noopener">📘 Facebook: BayQuem SAC</a>
+          <a class="wa" href="https://wa.me/51989571595" target="_blank" rel="noopener">💬 WhatsApp: +51 989 571 595</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 BAYQUEM SAC. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    // Cerrar menú al hacer clic en un enlace (móvil)
+    document.querySelectorAll('nav a').forEach(a=>{
+      a.addEventListener('click',()=>document.body.classList.remove('nav-open'));
+    });
+  </script>
+</body>
+</html>
