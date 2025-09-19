@@ -2,79 +2,115 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estudio Contable [Tu Nombre o Empresa]</title>
+  <title>BAYQUEM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Fuente Raleway de Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, nav, section, footer { padding: 20px; }
-    header { background: #00416a; color: white; }
-    nav { background: #e9e9e9; }
-    nav a { margin: 0 10px; color: #00416a; text-decoration: none; }
-    section { margin: 20px 0; }
-    .redes a { margin: 0 8px; }
-    .calendar { margin-top: 10px; }
-    footer { background: #00416a; color: white; text-align: center; padding: 10px; }
+    body {
+      font-family: 'Raleway', Arial, sans-serif;
+      margin: 0;
+      background: #f7f7fa;
+      color: #25316d;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #fff;
+      padding: 24px;
+      box-shadow: 0 1px 8px #0001;
+    }
+    header img.logo {
+      height: 60px;
+    }
+    .isotipo {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 60px;
+      opacity: 0.1;
+    }
+    main {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px #0001;
+      padding: 32px;
+      position: relative;
+    }
+    h1, h2 {
+      color: #25316d;
+    }
+    button.edit-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #3d55a5;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 2px 8px #0002;
+      transition: background 0.2s;
+    }
+    button.edit-btn.active {
+      background: #1b2763;
+    }
+    .editable[contenteditable="true"] {
+      outline: 2px dashed #3d55a5;
+      background: #e8eafe;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      main { padding: 16px; }
+      header { flex-direction: column; gap: 8px; padding: 16px; }
+    }
   </style>
 </head>
 <body>
+  <button class="edit-btn" onclick="toggleEdit()">✏️ Editar página</button>
   <header>
-    <h1>Estudio Contable [Tu Nombre o Empresa]</h1>
-    <p>Soluciones contables para tu negocio</p>
+    <img src="logo blanco.png" alt="Logo BAYQUEM" class="logo">
+    <h1 class="editable" spellcheck="false">BAYQUEM</h1>
   </header>
-  <nav>
-    <a href="#sobre-nosotros">Sobre Nosotros</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#citas">Separar Cita</a>
-    <a href="#contacto">Escríbenos</a>
-  </nav>
-
-  <section id="sobre-nosotros">
-    <h2>Sobre Nosotros</h2>
-    <p>Somos un estudio contable con amplia experiencia en asesoría fiscal, laboral y financiera para profesionales y empresas.</p>
-  </section>
-
-  <section id="servicios">
-    <h2>Servicios</h2>
+  <main>
+    <img src="isotipo.png" alt="Isotipo" class="isotipo" style="pointer-events: none;">
+    <h2 class="editable" spellcheck="false">Bienvenido a nuestro Estudio Contable</h2>
+    <p class="editable" spellcheck="false">
+      Ofrecemos servicios de contabilidad, asesoría tributaria y gestión empresarial en Perú.<br>
+      ¡Personaliza este texto haciendo clic en <b>Editar página</b> y luego sobre el texto que quieras cambiar!
+    </p>
+    <h3 class="editable" spellcheck="false">Nuestros servicios:</h3>
     <ul>
-      <li>Contabilidad general y financiera</li>
-      <li>Declaraciones de impuestos</li>
-      <li>Asesoría tributaria y laboral</li>
-      <li>Constitución de empresas</li>
-      <li>Planillas y sueldos</li>
+      <li class="editable" spellcheck="false">Contabilidad general y financiera</li>
+      <li class="editable" spellcheck="false">Declaraciones tributarias (SUNAT)</li>
+      <li class="editable" spellcheck="false">Asesoría laboral y planilla</li>
+      <li class="editable" spellcheck="false">Constitución de empresas</li>
     </ul>
-  </section>
-
-  <section id="redes-sociales" class="redes">
-    <h2>Redes Sociales</h2>
-    <a href="https://facebook.com/" target="_blank">Facebook</a>
-    <a href="https://wa.me/tu-numero" target="_blank">WhatsApp</a>
-    <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-  </section>
-
-  <section id="citas">
-    <h2>Separar Cita</h2>
-    <!-- Calendly Widget ejemplo -->
-    <div class="calendar">
-      <iframe src="https://calendly.com/" width="320" height="400" frameborder="0"></iframe>
-    </div>
-    <p>Reserva tu cita fácilmente a través de nuestro calendario.</p>
-  </section>
-
-  <section id="contacto">
-    <h2>Escríbenos</h2>
-    <form action="https://formspree.io/f/tu-codigo" method="POST">
-      <label>Nombre:<br><input type="text" name="nombre" required></label><br>
-      <label>Email:<br><input type="email" name="email" required></label><br>
-      <label>Mensaje:<br><textarea name="mensaje" required></textarea></label><br>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
-  <footer>
-    &copy; 2025 BAYQUEM - Todos los derechos reservados.
-  </footer>
+    <h3 class="editable" spellcheck="false">Contacto</h3>
+    <p class="editable" spellcheck="false">
+      Escríbenos a <a href="mailto:tuemail@bayquem.net">tuemail@bayquem.net</a>
+      <br>Teléfono: <span class="editable" spellcheck="false">+51 999 999 999</span>
+    </p>
+  </main>
+  <script>
+    // Permite editar textos haciendo clic en "Editar página"
+    let editMode = false;
+    function toggleEdit() {
+      editMode = !editMode;
+      document.querySelectorAll('.editable').forEach(el => {
+        el.contentEditable = editMode;
+      });
+      document.querySelector('.edit-btn').classList.toggle('active', editMode);
+      if(editMode) {
+        alert('Modo edición activado.\nHaz clic sobre los textos que quieras cambiar. Al terminar, haz clic de nuevo en "Editar página" para salir.');
+      }
+    }
+  </script>
 </body>
 </html>
-header { background: #00796b; color: white; }
-nav { background: #3F51B5; }
-nav a { color: #00796b; }
-footer { background: #004d40; }
