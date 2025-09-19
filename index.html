@@ -2,17 +2,105 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Prueba BAYQUEM</title>
+  <title>BAYQUEM | Estudio Contable en Perú</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estudio contable BAYQUEM: servicios de contabilidad, tributos y gestión empresarial en Perú. Asesoría profesional para tu empresa o negocio.">
+  <link rel="icon" type="image/png" href="isotipo.png">
+  <!-- Open Graph para compartir en redes -->
+  <meta property="og:title" content="BAYQUEM | Estudio Contable en Perú">
+  <meta property="og:description" content="Servicios de contabilidad, tributos y gestión empresarial en Perú.">
+  <meta property="og:image" content="https://bayquem.net/isotipo.png">
+  <meta property="og:url" content="https://bayquem.net">
+  <meta property="og:type" content="website">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="BAYQUEM | Estudio Contable en Perú">
+  <meta name="twitter:description" content="Servicios de contabilidad, tributos y gestión empresarial en Perú.">
+  <meta name="twitter:image" content="https://bayquem.net/isotipo.png">
+  <!-- Fuentes e iconos -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:800,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
-    body { background: #e3e9f6; font-family: Arial, sans-serif; }
-    h1 { color: #1a237e; text-align:center; margin-top: 50px;}
-    p { text-align:center; }
-  </style>
-</head>
-<body>
-  <h1>¡La página se está mostrando!</h1>
-  <p>Si ves este mensaje, tu <b>index.html</b> está funcionando correctamente.<br>
-  Ahora puedes reemplazarlo por tu código real.</p>
-</body>
-</html>
+    :root {
+      --azul-barra: #1a237e;
+      --azul-fuerte: #3d55a5;
+      --azul-suave: #e3e9f6;
+      --gris-letra: #25316d;
+    }
+    body {
+      font-family: 'Raleway', Arial, sans-serif;
+      margin: 0;
+      background: var(--azul-suave);
+      color: var(--gris-letra);
+    }
+    nav {
+      background: var(--azul-barra);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 36px;
+      height: 68px;
+      box-shadow: 0 2px 12px #0002;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    nav .logo img {
+      height: 44px;
+      border-radius: 8px;
+      background: #fff;
+      padding: 2px 7px;
+    }
+    nav .logo span {
+      font-size: 1.3em;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05em;
+      transition: color .2s;
+    }
+    nav ul li a:hover {
+      color: #b2c2f7;
+    }
+    @media(max-width:720px){
+      nav {flex-direction:column; align-items:flex-start; height:auto; padding:12px;}
+      nav .logo {margin-bottom:10px;}
+      nav ul {flex-direction:column; gap:8px;}
+    }
+    .hero {
+      text-align: center;
+      padding: 58px 15px 30px 15px;
+      background: #fff;
+      border-radius: 0 0 28px 28px;
+      box-shadow: 0 4px 24px #0001;
+      margin-bottom: 24px;
+    }
+    .hero h1 { font-size:2.1em; margin:10px 0 8px 0; color:var(--azul-barra);}
+    .hero p { font-size:1.13em; margin: 0 0 20px 0;}
+    .btn {
+      display:inline-block; background:var(--azul-barra); color:#fff;
+      padding:12px 30px; border-radius:8px; font-size:1em; text-decoration:none; margin-top:14px; transition:background .2s;
+      border:none; cursor:pointer;
+    }
+    .btn:hover { background:var(--azul-fuerte);}
+    main { max-width:900px; margin:0 auto; padding:0 12px;}
+    section { background:#fff; border-radius:18px; box-shadow:0 2px 16px #0001; margin-bottom:32px; padding:30px 18px;}
+    h2
