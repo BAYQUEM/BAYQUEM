@@ -2,115 +2,44 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>BAYQUEM</title>
+  <title>BAYQUEM | Estudio Contable</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Fuente Raleway de Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:800,400&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Raleway', Arial, sans-serif;
-      margin: 0;
-      background: #f7f7fa;
-      color: #25316d;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      background: #fff;
-      padding: 24px;
-      box-shadow: 0 1px 8px #0001;
-    }
-    header img.logo {
-      height: 60px;
-    }
-    .isotipo {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 60px;
-      opacity: 0.1;
-    }
-    main {
-      max-width: 700px;
-      margin: 40px auto;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 2px 16px #0001;
-      padding: 32px;
-      position: relative;
-    }
-    h1, h2 {
-      color: #25316d;
-    }
-    button.edit-btn {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      background: #3d55a5;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 18px;
-      font-size: 16px;
-      cursor: pointer;
-      z-index: 1000;
-      box-shadow: 0 2px 8px #0002;
-      transition: background 0.2s;
-    }
-    button.edit-btn.active {
-      background: #1b2763;
-    }
-    .editable[contenteditable="true"] {
-      outline: 2px dashed #3d55a5;
-      background: #e8eafe;
-    }
-    /* Responsive */
-    @media (max-width: 600px) {
-      main { padding: 16px; }
-      header { flex-direction: column; gap: 8px; padding: 16px; }
-    }
+    body { font-family: 'Raleway', Arial, sans-serif; margin:0; background:#f6f8fa; color:#25316d; }
+    header { background:#fff; box-shadow:0 2px 10px #0001; padding:32px 0; text-align:center; }
+    header img { height:72px; }
+    h1 { font-size:2.3em; margin:12px 0 8px 0; }
+    h2 { font-size:1.3em; font-weight:400; margin:0 0 24px 0; }
+    main { max-width:650px; margin:40px auto; background:#fff; border-radius:18px; box-shadow:0 4px 20px #0001; padding:42px 32px; }
+    ul { padding-left:20px; }
+    .btn { display:inline-block; background:#3d55a5; color:white; padding:13px 32px; border-radius:8px; font-size:1.1em; text-decoration:none; margin-top:24px; transition:background .2s;}
+    .btn:hover { background:#25316d; }
+    footer { text-align:center; color:#9aa3b9; font-size:.9em; margin:40px 0 0 0; }
+    @media (max-width:600px){ main{padding:20px 8px;} }
   </style>
 </head>
 <body>
-  <button class="edit-btn" onclick="toggleEdit()">✏️ Editar página</button>
   <header>
-    <img src="logo blanco.png" alt="Logo BAYQUEM" class="logo">
-    <h1 class="editable" spellcheck="false">BAYQUEM</h1>
+    <img src="logo blanco.png" alt="Logo BAYQUEM">
+    <h1>BAYQUEM</h1>
+    <h2>Estudio Contable en Perú</h2>
   </header>
   <main>
-    <img src="isotipo.png" alt="Isotipo" class="isotipo" style="pointer-events: none;">
-    <h2 class="editable" spellcheck="false">Bienvenido a nuestro Estudio Contable</h2>
-    <p class="editable" spellcheck="false">
-      Ofrecemos servicios de contabilidad, asesoría tributaria y gestión empresarial en Perú.<br>
-      ¡Personaliza este texto haciendo clic en <b>Editar página</b> y luego sobre el texto que quieras cambiar!
-    </p>
-    <h3 class="editable" spellcheck="false">Nuestros servicios:</h3>
+    <h3>¿Quiénes somos?</h3>
+    <p>Somos un equipo de profesionales dedicados a la contabilidad, asesoría tributaria y gestión empresarial.<br>
+    Brindamos soluciones personalizadas para tu empresa o negocio.</p>
+    <h3>Servicios</h3>
     <ul>
-      <li class="editable" spellcheck="false">Contabilidad general y financiera</li>
-      <li class="editable" spellcheck="false">Declaraciones tributarias (SUNAT)</li>
-      <li class="editable" spellcheck="false">Asesoría laboral y planilla</li>
-      <li class="editable" spellcheck="false">Constitución de empresas</li>
+      <li>Contabilidad general y financiera</li>
+      <li>Asesoría tributaria y laboral</li>
+      <li>Declaraciones SUNAT</li>
+      <li>Constitución de empresas</li>
     </ul>
-    <h3 class="editable" spellcheck="false">Contacto</h3>
-    <p class="editable" spellcheck="false">
-      Escríbenos a <a href="mailto:tuemail@bayquem.net">tuemail@bayquem.net</a>
-      <br>Teléfono: <span class="editable" spellcheck="false">+51 999 999 999</span>
-    </p>
+    <a class="btn" href="mailto:tuemail@bayquem.net">Contáctanos</a>
   </main>
-  <script>
-    // Permite editar textos haciendo clic en "Editar página"
-    let editMode = false;
-    function toggleEdit() {
-      editMode = !editMode;
-      document.querySelectorAll('.editable').forEach(el => {
-        el.contentEditable = editMode;
-      });
-      document.querySelector('.edit-btn').classList.toggle('active', editMode);
-      if(editMode) {
-        alert('Modo edición activado.\nHaz clic sobre los textos que quieras cambiar. Al terminar, haz clic de nuevo en "Editar página" para salir.');
-      }
-    }
-  </script>
+  <footer>
+    &copy; 2025 BAYQUEM | Todos los derechos reservados
+  </footer>
 </body>
 </html>
