@@ -14,13 +14,13 @@
   <meta property="og:image" content="isotipo.png" />
   <meta property="og:locale" content="es_PE" />
 
-  <!-- JSON-LD: Organización + Sitelinks (Google puede usarlo) -->
+  <!-- JSON-LD Org (ajusta TU-DOMINIO-AQUI) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Organization",
     "name":"BAYQUEM SAC",
-    "url":"https://TU-DOMINIO-AQUI", 
+    "url":"https://TU-DOMINIO-AQUI/",
     "logo":"https://TU-DOMINIO-AQUI/Logo%20blanco.png",
     "sameAs":[
       "https://instagram.com/bayquem_sac",
@@ -42,7 +42,10 @@
 
   <style>
     :root{
-      --brand:#1a237e; --accent:#388e3c; --ink:#1f2430; --muted:#5a6376;
+      --brand:#1a237e;           /* azul principal */
+      --accent:#5aa7ff;          /* NUEVO azul claro para CTAs */
+      --accent-hover:#458ff0;    /* hover del CTA azul */
+      --ink:#1f2430; --muted:#5a6376;
       --bg:#f5f7fa; --card:#ffffff; --soft:#e9eef9; --maxw:1100px;
       --radius:18px; --shadow:0 10px 40px rgba(23,34,79,.12);
     }
@@ -57,7 +60,7 @@
     .bar{display:flex; align-items:center; justify-content:space-between; padding:10px 0}
     .logo{display:flex; align-items:center; gap:12px}
     .logo img{height:44px}
-    .brand{font-family:'Montserrat',sans-serif; font-weight:700; color:#fff; font-size:1.4rem}
+    /* Eliminado el texto de marca al lado del logo */
     nav a{color:#fff; font-weight:600; margin:0 10px; padding:10px 4px}
     nav a:hover{color:#b4d5ff}
     .menu-btn{display:none; border:1px solid #31407a; background:#0b143f; color:#fff; padding:8px 12px; border-radius:8px}
@@ -73,7 +76,8 @@
     .hero p.lead{font-size:1.1rem; opacity:.9}
     .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
     .btn{display:inline-block; padding:12px 18px; border-radius:10px; font-weight:700; border:none; cursor:pointer}
-    .btn-primary{background:#25d366; color:#0b143f} .btn-primary:hover{filter:brightness(1.05)}
+    .btn-primary{background:var(--accent); color:#0b143f}        /* AZUL CLARO */
+    .btn-primary:hover{background:var(--accent-hover); color:#fff}
     .btn-ghost{background:#0b143f; color:#fff; border:1px solid #31407a}
     .hero-logos{display:flex; gap:16px; align-items:center}
     .hero-logos img{height:48px; background:#ffffff18; border-radius:10px; padding:6px}
@@ -96,7 +100,7 @@
     @media (max-width:900px){.services .grid{grid-template-columns:1fr 1fr}} 
     @media (max-width:620px){.services .grid{grid-template-columns:1fr}}
 
-    /* Separar cita (agenda) */
+    /* Separar cita (Agenda) */
     .booking{background:linear-gradient(135deg,#f0fbfa,#eef2ff); border-radius:16px; padding:24px; box-shadow:var(--shadow)}
     .booking .cols{display:grid; grid-template-columns:1.2fr 1fr; gap:18px}
     .booking label{font-weight:700}
@@ -104,10 +108,11 @@
       width:100%; padding:10px; border:1px solid #b4c9e5; border-radius:8px; font:inherit; background:#fff
     }
     .booking .actions{display:flex; gap:10px; align-items:center; margin-top:8px}
-    .btn-blue{background:var(--brand); color:#fff}
+    .btn-blue{background:var(--accent); color:#0b143f}           /* AZUL CLARO */
+    .btn-blue:hover{background:var(--accent-hover); color:#fff}
     .note{color:var(--muted); font-size:.95rem}
     .widget{background:#fff; border:1px solid #e6ebfb; border-radius:12px; padding:8px}
-    .widget iframe{width:100%; height:560px; border:0; border-radius:10px}
+    .widget iframe{width:100%; height:650px; border:0; border-radius:10px}
     @media (max-width:900px){.booking .cols{grid-template-columns:1fr}}
 
     /* Contacto */
@@ -132,7 +137,6 @@
     <div class="wrap bar" id="top">
       <a class="logo" href="#top" aria-label="Inicio BAYQUEM">
         <img src="Logo blanco.png" alt="Logotipo BAYQUEM" />
-        <span class="brand">BAYQUEM SAC</span>
       </a>
       <button class="menu-btn" aria-label="Abrir menú" onclick="document.body.classList.toggle('nav-open')">☰ Menú</button>
       <nav aria-label="Navegación principal">
@@ -144,7 +148,7 @@
     </div>
   </header>
 
-  <!-- Hero simple -->
+  <!-- Hero -->
   <section class="hero">
     <div class="inner">
       <div>
@@ -189,24 +193,21 @@
       </div>
     </section>
 
-    <!-- Separar cita (Agenda) -->
+    <!-- Separar cita (Agenda con Microsoft Bookings) -->
     <section id="cita" class="booking" aria-labelledby="t-cita">
       <h2 id="t-cita">Separar cita</h2>
       <div class="cols">
-        <!-- Opción A: Formulario nativo que te llega por correo -->
+        <!-- Formulario nativo (con "Nombre del interesado") -->
         <div>
           <form action="https://formsubmit.co/mmquesadaser@hotmail.com" method="POST">
-            <!-- FormSubmit options -->
             <input type="hidden" name="_subject" value="Nueva solicitud de CITA – BAYQUEM" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_autoresponse" value="¡Gracias por separar tu cita con BAYQUEM! Te confirmaremos por correo." />
-            <!-- Cambia por tu dominio final cuando lo tengas: -->
             <input type="hidden" name="_next" value="https://TU-DOMINIO-AQUI/gracias.html" />
-            <!-- Honeypot -->
             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
-            <label for="cita-nombre">Nombre y Apellido</label>
+            <label for="cita-nombre">Nombre del interesado</label>
             <input id="cita-nombre" name="nombre" type="text" required autocomplete="name" />
 
             <label for="cita-email">Correo electrónico</label>
@@ -235,15 +236,16 @@
           </form>
         </div>
 
-        <!-- Opción B (recomendada): widget de agenda tipo Calendly -->
+        <!-- Widget Microsoft Bookings (reemplaza TU-BOOKINGS-URL) -->
         <div class="widget">
-          <!-- Si creas una cuenta gratuita en Calendly, reemplaza el src con tu enlace -->
-          <!-- Ejemplo: https://calendly.com/tuusuario/consulta -->
-          <iframe title="Agenda BAYQUEM"
-                  src="about:blank"
-                  loading="lazy"></iframe>
+          <iframe
+            title="Agenda BAYQUEM (Microsoft Bookings)"
+            src="TU-BOOKINGS-URL"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowtransparency="true"></iframe>
           <p class="mini" style="padding:8px 8px 0 8px">
-            Consejo: crea un enlace de calendario (Calendly/Cal.com) para que el cliente elija un horario disponible y ambos reciban confirmación automática en sus correos.
+            Elige un horario disponible y recibirás confirmación automáticamente por correo.
           </p>
         </div>
       </div>
@@ -261,7 +263,7 @@
           <input type="hidden" name="_next" value="https://TU-DOMINIO-AQUI/gracias.html" />
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
-          <label for="ctc-nombre">Nombre</label>
+          <label for="ctc-nombre">Nombre del interesado</label>
           <input id="ctc-nombre" name="nombre" type="text" required />
 
           <label for="ctc-email">Correo</label>
